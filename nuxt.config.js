@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-sample-content',
+    title: 'Nuxt sample content',
     htmlAttrs: {
       lang: 'en'
     },
@@ -16,6 +16,24 @@ export default {
     ]
   },
 
+  // https://nuxtjs.org/docs/configuration-glossary/configuration-generate
+  generate: {
+    // subFolders: false,
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map((file) => {
+        const path =
+          file.path === '/index/index' || file.path === '/index'
+            ? '/'
+            : file.path
+        return path.replace('/index', '')
+      })
+    },
+  },
+
+  // The source directory: https://nuxtjs.org/docs/configuration-glossary/configuration-srcdir
   srcDir: 'src',
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -41,6 +59,28 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxt/content',
+    [
+      'nuxt-fontawesome',
+      {
+        // customize component name
+        component: 'fa',
+        imports: [
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: [
+              'faHome',
+              'faHashtag',
+            ],
+          },
+          { set: '@fortawesome/free-brands-svg-icons', icons: ['faGithub', 'faVuejs'] },
+          {
+            set: '@fortawesome/free-regular-svg-icons',
+            icons: ['faLightbulb'],
+          },
+        ],
+      },
+    ],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
