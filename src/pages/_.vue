@@ -1,7 +1,11 @@
 <template>
-  <div class="grid">
-    <div v-for="(menuDocument, index) in menuDocuments" :key="index">
-      <ul class="text-center">
+  <div class="grid grid-cols-10 divide-x divide-gray-200">
+    <div
+      v-for="(menuDocument, index) in menuDocuments"
+      :key="index"
+      class="col-span-1 pt-3 pl-4"
+    >
+      <ul class="space-y-2">
         <li v-for="(item, itemIndex) in menuDocument" :key="itemIndex">
           <nuxt-link :to="item.dir">{{
             (item.menu && item.menu.title) || item.title
@@ -10,9 +14,7 @@
       </ul>
     </div>
     <div :class="classObject">
-      <div class="container">
-        <nuxt-content :document="document" />
-      </div>
+      <nuxt-content :document="document" class="prose" />
     </div>
   </div>
 </template>
@@ -54,11 +56,11 @@ export default {
     }
 
     const classObject = {
-      column: true,
+      'pt-3 pl-4 transition-all duration-500 ease-in-out': true,
     }
 
-    const columnCount = 11 - menuDocuments.length
-    classObject['is-' + columnCount] = true
+    const columnCount = 10 - menuDocuments.length
+    classObject['col-span-' + columnCount] = true
 
     // content
     let path = `/${params.pathMatch}`
