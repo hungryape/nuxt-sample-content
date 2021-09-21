@@ -85,5 +85,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  content: {
+    // $content api will be served on localhost:3000/content-api
+    apiPrefix: 'content-api'
   }
 }
