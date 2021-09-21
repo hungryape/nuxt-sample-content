@@ -1,5 +1,10 @@
 module.exports = {
-  purge: [],
+  purge: {
+    content: ['./src/**/*.vue'],
+    safelist: [
+      /^col-span-/
+    ]
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
