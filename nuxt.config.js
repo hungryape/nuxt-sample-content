@@ -1,3 +1,4 @@
+import path from 'path'
 export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -91,5 +92,11 @@ export default {
   content: {
     // $content api will be served on localhost:3000/content-api
     apiPrefix: 'content-api'
+  },
+
+  tailwindcss: {
+    configPath: path.resolve(__dirname, './tailwind.config.js'),
+    exposeConfig: false,
+    config: {}
   }
 }
