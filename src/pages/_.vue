@@ -56,7 +56,7 @@ export default {
     }
 
     const classObject = {
-      'pt-3 pl-4 transition-all duration-500 ease-in-out': true,
+      'pt-3 pl-4': true,
     }
 
     const columnCount = 10 - menuDocuments.length
