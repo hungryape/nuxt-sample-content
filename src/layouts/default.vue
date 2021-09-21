@@ -9,6 +9,7 @@
           </li>
           <li><nuxt-link to="/" exact>Home</nuxt-link></li>
           <li><nuxt-link to="/collections">Collections</nuxt-link></li>
+          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
         </ul>
       </div>
       <div class="col-span-11">
