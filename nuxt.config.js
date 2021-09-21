@@ -73,7 +73,7 @@ export default {
               'faHashtag',
             ],
           },
-          { set: '@fortawesome/free-brands-svg-icons', icons: ['faGithub', 'faVuejs'] },
+          { set: '@fortawesome/free-brands-svg-icons', icons: ['faGithub'] },
           {
             set: '@fortawesome/free-regular-svg-icons',
             icons: ['faLightbulb'],

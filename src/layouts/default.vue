@@ -4,9 +4,8 @@
       <div class="col-span-1 pt-3 pl-4">
         <ul class="space-y-2">
           <li>
-            <nuxt-link to="/" exact class="text-5xl"
-              ><fa id="logo" :icon="['fab', 'vuejs']"
-            /></nuxt-link>
+            <nuxt-link to="/" exact
+              ><nuxt-logo></nuxt-logo></nuxt-link>
           </li>
           <li><nuxt-link to="/" exact>Home</nuxt-link></li>
           <li><nuxt-link to="/collections">Collections</nuxt-link></li>
