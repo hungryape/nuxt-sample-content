@@ -82,6 +82,7 @@ export default {
   build: {},
 
   content: {
+    dir: resolve('docs'),
     // $content api will be served on localhost:3000/content-api
     apiPrefix: 'content-api',
   },
