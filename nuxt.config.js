@@ -1,21 +1,22 @@
-import path from 'path'
+import { resolve } from 'path'
 export default {
+  rootDir: './',
+  // The source directory: https://nuxtjs.org/docs/configuration-glossary/configuration-srcdir
+  srcDir: 'src',
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Nuxt sample content',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // https://nuxtjs.org/docs/configuration-glossary/configuration-generate
@@ -35,16 +36,11 @@ export default {
     },
   },
 
-  // The source directory: https://nuxtjs.org/docs/configuration-glossary/configuration-srcdir
-  srcDir: 'src',
-
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -70,10 +66,7 @@ export default {
         imports: [
           {
             set: '@fortawesome/free-solid-svg-icons',
-            icons: [
-              'faHome',
-              'faHashtag',
-            ],
+            icons: ['faHome', 'faHashtag'],
           },
           { set: '@fortawesome/free-brands-svg-icons', icons: ['faGithub'] },
           {
@@ -86,17 +79,16 @@ export default {
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 
   content: {
     // $content api will be served on localhost:3000/content-api
-    apiPrefix: 'content-api'
+    apiPrefix: 'content-api',
   },
 
   tailwindcss: {
-    configPath: path.resolve(__dirname, './tailwind.config.js'),
+    configPath: resolve('tailwind.config.js'),
     exposeConfig: false,
-    config: {}
-  }
+    config: {},
+  },
 }
